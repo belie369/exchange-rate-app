@@ -14,9 +14,14 @@ const calculate = () => {
 			const currency2 = currencyTwo.value;
 
 			const rate = data.rates[currency2];
-			console.log(rate);
 
 			rateInfo.textContent = `1 ${currency1} = ${rate.toFixed(4)} ${currency2}`;
 			amountTwo.value = (amountOne.value * rate).toFixed(2);
 		});
 };
+
+currencyOne.addEventListener('change', calculate);
+currencyTwo.addEventListener('change', calculate);
+amountOne.addEventListener('input', calculate);
+
+calculate();
