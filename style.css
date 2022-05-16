@@ -61,3 +61,40 @@ body {
 	background: none;
 	text-align: center;
 }
+
+.app-body select {
+	padding: 10px 20px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.app-body input:focus,
+.app-body select:focus {
+	outline: none;
+	color: rgb(67, 171, 255);
+}
+
+.app-body option {
+	color: #333;
+}
+
+.swap {
+	align-self: flex-end;
+	margin: 5px;
+	padding: 5px 50px;
+	background-image: linear-gradient(45deg, #2b89e7, #11e763);
+	font-size: 30px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.swap:focus {
+	outline: none;
+	background-image: linear-gradient(45deg, #317fcc, #1fc06a);
+}
+
+.wrapper .rate-info {
+	margin-top: 30px;
+	margin-bottom: 0;
+}
