@@ -40,7 +40,7 @@ const shitRub = () => {
 
 			setTimeout(() => {
 				shit.remove();
-			}, 2000);
+			}, 3000);
 		}, 100);
 	} else {
 		clearInterval(showShit);
