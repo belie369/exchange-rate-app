@@ -7,6 +7,7 @@ const rateInfo = document.querySelector('.rate-info');
 let showShit;
 
 const calculate = () => {
+	clearInterval(showShit);
 	fetch(`
     https://api.exchangerate.host/latest?base=${currencyOne.value}&symbols=${currencyTwo.value}`)
 		.then((res) => res.json())
@@ -22,6 +23,7 @@ const calculate = () => {
 };
 
 const swap = () => {
+	clearInterval(showShit);
 	const oldValue = currencyOne.value;
 	currencyOne.value = currencyTwo.value;
 	currencyTwo.value = oldValue;
