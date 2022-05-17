@@ -104,8 +104,9 @@ i.shit {
 	position: absolute;
 	top: -50px;
 	animation: shitting linear;
-	z-index: -10;
+	font-size: 24px;
 	transition: opacity 0.5s;
+	z-index: -10;
 }
 
 @keyframes shitting {
