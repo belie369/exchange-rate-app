@@ -20,8 +20,16 @@ const calculate = () => {
 		});
 };
 
+const swap = () => {
+	const oldValue = currencyOne.value;
+	currencyOne.value = currencyTwo.value;
+	currencyTwo.value = oldValue;
+	calculate();
+};
+
 currencyOne.addEventListener('change', calculate);
 currencyTwo.addEventListener('change', calculate);
 amountOne.addEventListener('input', calculate);
+swapBtn.addEventListener('click', swap);
 
 calculate();
