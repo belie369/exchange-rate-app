@@ -4,6 +4,7 @@ const currencyTwo = document.querySelector('#currency-two');
 const amountTwo = document.querySelector('.amount-two');
 const swapBtn = document.querySelector('.swap');
 const rateInfo = document.querySelector('.rate-info');
+let showShit;
 
 const calculate = () => {
 	fetch(`
@@ -27,8 +28,37 @@ const swap = () => {
 	calculate();
 };
 
-currencyOne.addEventListener('change', calculate);
-currencyTwo.addEventListener('change', calculate);
+const shitRub = () => {
+	if (currencyOne.value == 'RUB' || currencyTwo.value == 'RUB') {
+		showShit = setInterval(() => {
+			const shit = document.createElement('i');
+			shit.classList.add('shit');
+			shit.textContent = '💩';
+			shit.style.left = Math.random() * window.innerWidth + 'px';
+			shit.style.animationDuration = 3 + 's';
+			document.body.append(shit);
+
+			setTimeout(() => {
+				shit.remove();
+			}, 2000);
+		}, 100);
+	} else {
+		clearInterval(showShit);
+		const shits = document.getElementsByClassName('shit');
+		for (let i = 0; i < shits.length; i++) {
+			shits[i].style.opacity = 0;
+		}
+	}
+};
+
+currencyOne.addEventListener('change', () => {
+	calculate();
+	shitRub();
+});
+currencyTwo.addEventListener('change', () => {
+	calculate();
+	shitRub();
+});
 amountOne.addEventListener('input', calculate);
 swapBtn.addEventListener('click', swap);
 
