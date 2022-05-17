@@ -23,11 +23,11 @@ const calculate = () => {
 };
 
 const swap = () => {
-	clearInterval(showShit);
 	const oldValue = currencyOne.value;
 	currencyOne.value = currencyTwo.value;
 	currencyTwo.value = oldValue;
 	calculate();
+	shitRub();
 };
 
 const shitRub = () => {
